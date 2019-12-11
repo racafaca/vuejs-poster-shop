@@ -36,7 +36,7 @@
             </ul>
             <div v-if="cart.length">
                 <div>
-                    Total: {{ total | currency(currency) }}
+                    Total: {{ total | round | currency(currency) }}
                 </div>
             </div>
             <div v-else class="empty-cart">

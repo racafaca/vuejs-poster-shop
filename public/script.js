@@ -29,6 +29,9 @@ new Vue({
     }
   },
   filters: {
+    round: function (value) {
+      return Math.round(value * 100) / 100
+    },
     currency: function (value, currency) {
       return `${currency} ${value}`
     }
