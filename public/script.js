@@ -1,7 +1,7 @@
 new Vue({
   el: '#app',
   data: {
-    search: '',
+    search: 'witcher',
     last_search: '',
     total: 0,
     currency: '$',
@@ -64,5 +64,8 @@ new Vue({
     currency: function (value, currency) {
       return `${currency} ${value}`
     }
-  }
+  },
+  mounted: function () {
+  this.onSubmit()
+},
 })
