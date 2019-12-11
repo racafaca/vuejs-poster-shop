@@ -1,6 +1,7 @@
 new Vue({
   el: '#app',
   data: {
+    search: '',
     total: 0,
     currency: '$',
     items: [
@@ -12,7 +13,7 @@ new Vue({
   },
   methods: {
     onSubmit: function () {
-      console.log('Submitted.')
+      console.log(this.search)
     },
     addItem: function (index) {
       let item = this.items[index]
