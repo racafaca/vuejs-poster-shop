@@ -20,8 +20,7 @@ new Vue({
   methods: {
     addItem: function (index) {
       this.total += 9.99
-      console.log(index)
-      // this.cart.push(this.items[index])
+      this.cart.push(this.items[index])
     }
   }
 })
