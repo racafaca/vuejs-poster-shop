@@ -2,6 +2,7 @@ new Vue({
   el: '#app',
   data: {
     search: '',
+    last_search: '',
     total: 0,
     currency: '$',
     items: [
@@ -15,6 +16,7 @@ new Vue({
         .get('/search/'.concat(this.search))
         .then((response) => {
             this.items = response.data
+            this.last_search = this.search
           },
           (error) => {
 

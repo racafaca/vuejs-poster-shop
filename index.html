@@ -24,6 +24,9 @@
     </div>
     <div class="main">
         <div class="products">
+            <div class="search-results">
+                Found {{ items.length }} results for search term {{ last_search }}.
+            </div>
             <div v-if="items.length" class="product" v-for="(item, index) in items">
                 <div>
                     <img class="product-image" v-bind:src="item.link" alt="">
