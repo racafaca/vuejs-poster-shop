@@ -229,3 +229,7 @@ h1 {
 .cart ul .cart-item button {
     margin-right: 3px;
 }
+
+.not-available {
+    color: red;
+}
