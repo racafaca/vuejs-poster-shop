@@ -25,8 +25,13 @@
     <div class="main">
         <div class="products">
             <div v-if="items.length" class="product" v-for="(item, index) in items">
-                <h4 class="product-title">{{ item.title }}</h4>
-                <button class="add-to-cart btn" v-on:click="addItem(index)">Add to cart</button>
+                <div>
+                    <img class="product-image" v-bind:src="item.link" alt="">
+                </div>
+                <div>
+                    <h4 class="product-title">{{ item.title }}</h4>
+                    <button class="add-to-cart btn" v-on:click="addItem(index)">Add to cart</button>
+                </div>
             </div>
             <div v-else class="empty-items">
                No items match this search.
