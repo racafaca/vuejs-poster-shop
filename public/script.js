@@ -13,7 +13,14 @@ new Vue({
   },
   methods: {
     onSubmit: function () {
-      console.log(this.$http)
+      this.$http
+        .get('/search/'.concat(this.search))
+        .then((response) => {
+            console.log(response)
+          },
+          (error) => {
+
+          })
     },
     addItem: function (index) {
       let item = this.items[index]
