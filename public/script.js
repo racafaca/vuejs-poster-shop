@@ -13,10 +13,15 @@ new Vue({
         title: 'Item 3'
       },
     ],
+    cart: [
+
+    ]
   },
   methods: {
-    addItem: function () {
+    addItem: function (index) {
       this.total += 9.99
+      console.log(index)
+      // this.cart.push(this.items[index])
     }
   }
 })
