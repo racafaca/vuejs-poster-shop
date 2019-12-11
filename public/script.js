@@ -11,6 +11,9 @@ new Vue({
     cart: []
   },
   methods: {
+    onSubmit: function () {
+      console.log('Submitted.')
+    },
     addItem: function (index) {
       let item = this.items[index]
       let found = false
@@ -38,8 +41,8 @@ new Vue({
       if (item.qty === 0) {
         let cart = this.cart
         cart.splice(cart.findIndex((cartItem) => {
-          return cartItem.id === item.id;
-        }), 1);
+          return cartItem.id === item.id
+        }), 1)
       }
     }
   },
