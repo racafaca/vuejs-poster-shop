@@ -29,7 +29,9 @@
             <h2>Shopping Cart</h2>
             <ul>
                 <li class="cart-item" v-for="item in cart">
-                    {{ item.title }}
+                    <div class="item-title">
+                        {{ item.title }}
+                    </div>
                 </li>
             </ul>
             <div>
