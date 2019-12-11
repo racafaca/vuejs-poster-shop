@@ -1,3 +1,4 @@
+const PRICE = 9.99
 new Vue({
   el: '#app',
   data: {
@@ -8,7 +9,8 @@ new Vue({
     items: [
     ],
     cart: [],
-    loading: false
+    loading: false,
+    price: PRICE
   },
   methods: {
     onSubmit: function () {
