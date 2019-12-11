@@ -13,19 +13,20 @@ new Vue({
   methods: {
     addItem: function (index) {
       let item = this.items[index]
-      this.total += item.price
       let found = false
-      this.cart.forEach((cartItem) => {
+      this.cart.some((cartItem) => {
         if (cartItem.id === item.id) {
           this.inc(cartItem)
           found = true
         }
+        return found
       })
       if (found) return
       this.cart.push({
         ...item,
         qty: 1
       })
+      this.total += item.price
     },
     inc: function (item) {
       item.qty++
