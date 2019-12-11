@@ -17,7 +17,7 @@ new Vue({
       let found = false
       this.cart.forEach((cartItem) => {
         if (cartItem.id === item.id) {
-          cartItem.qty++
+          this.inc(cartItem)
           found = true
         }
       })
@@ -26,6 +26,20 @@ new Vue({
         ...item,
         qty: 1
       })
+    },
+    inc: function (item) {
+      item.qty++
+      this.total += item.price
+    },
+    dec: function (item) {
+      item.qty--
+      this.total -= item.price
+      if (item.qty === 0) {
+        let cart = this.cart
+        cart.splice(cart.findIndex((cartItem) => {
+          return cartItem.id === item.id;
+        }), 1);
+      }
     }
   },
   filters: {
