@@ -5,18 +5,16 @@ new Vue({
     total: 0,
     currency: '$',
     items: [
-      { id: 1, title: 'Item 1', price: 9.99, available: true, },
-      { id: 2, title: 'Item 2', price: 12.99, available: false, },
-      { id: 3, title: 'Item 3', price: 5.99, available: true, },
     ],
     cart: []
   },
   methods: {
     onSubmit: function () {
+      this.items = []
       this.$http
         .get('/search/'.concat(this.search))
         .then((response) => {
-            console.log(response)
+            this.items = response.data
           },
           (error) => {
 

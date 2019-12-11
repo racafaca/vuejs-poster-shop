@@ -24,10 +24,12 @@
     </div>
     <div class="main">
         <div class="products">
-            <div class="product" v-for="(item, index) in items">
+            <div v-if="items.length" class="product" v-for="(item, index) in items">
                 <h4 class="product-title">{{ item.title }}</h4>
-                <button class="add-to-cart btn" v-on:click="addItem(index)" :disabled="!item.available">Add to cart</button>
-                <span class="not-available" v-if="!item.available">Not available</span>
+                <button class="add-to-cart btn" v-on:click="addItem(index)">Add to cart</button>
+            </div>
+            <div v-else class="empty-items">
+               No items match this search.
             </div>
         </div>
         <div class="cart">
