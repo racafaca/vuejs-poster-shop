@@ -49,7 +49,7 @@
             <ul>
                 <li v-for="item in cart" class="cart-item">
                     <div class="item-title">{{ item.title }}</div>
-                    <span class="item-qty">{{ item.price | currency(currency) }} x {{ item.qty }}</span>
+                    <span class="item-qty">{{ price | currency(currency) }} x {{ item.qty }}</span>
                     <button v-on:click="dec(item)" class="btn">-</button>
                     <button v-on:click="inc(item)" class="btn">+</button>
                 </li>

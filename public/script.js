@@ -42,15 +42,18 @@ new Vue({
         ...item,
         qty: 1
       })
-      this.total += item.price
+      // this.total += item.price
+      this.total += this.price
     },
     inc: function (item) {
       item.qty++
-      this.total += item.price
+      // this.total += item.price
+      this.total += this.price
     },
     dec: function (item) {
       item.qty--
-      this.total -= item.price
+      // this.total -= item.price
+      this.total -= this.price
       if (item.qty === 0) {
         let cart = this.cart
         cart.splice(cart.findIndex((cartItem) => {
