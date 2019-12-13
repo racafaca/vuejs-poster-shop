@@ -11,9 +11,12 @@ new Vue({
     results: [],
     cart: [],
     loading: false,
-    price: PRICE
+    price: PRICE,
   },
   methods: {
+    appendItems: function () {
+      console.log('Append items')
+    },
     onSubmit: function () {
       this.items = []
       this.loading = true
@@ -74,11 +77,11 @@ new Vue({
   },
   mounted: function () {
     this.onSubmit()
+    let vueInstance = this
+    let elem = document.getElementById('product-list-bottom')
+    let watcher = scrollMonitor.create(elem)
+    watcher.enterViewport(function () {
+      vueInstance.appendItems()
+    })
   },
-})
-
-let elem = document.getElementById('product-list-bottom')
-let watcher = scrollMonitor.create(elem)
-watcher.enterViewport(() => {
-  console.log('Entered viewport.')
 })
