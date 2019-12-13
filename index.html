@@ -44,7 +44,7 @@
                 No items match this search.
             </div>
             <div id="product-list-bottom">
-                <p v-if="(items.length === results.length) && results.length">No more items.</p>
+                <p v-if="noMoreItems">No more items.</p>
             </div>
         </div>
         <div class="cart">
