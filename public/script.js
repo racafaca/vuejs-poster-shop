@@ -15,7 +15,11 @@ new Vue({
   },
   methods: {
     appendItems: function () {
-      console.log('Append items')
+      if (this.items.length < this.results.length) {
+        let append = this.results
+          .slice(this.items.length, this.items.length + LOAD_NUM)
+        this.items = this.items.concat(append)
+      }
     },
     onSubmit: function () {
       this.items = []
@@ -24,7 +28,7 @@ new Vue({
         .get('/search/'.concat(this.search))
         .then((response) => {
             this.results = response.data
-            this.items = response.data.slice(0, LOAD_NUM)
+            this.appendItems()
             this.last_search = this.search
             this.loading = false
           },
