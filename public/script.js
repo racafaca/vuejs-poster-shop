@@ -73,6 +73,12 @@ new Vue({
     }
   },
   mounted: function () {
-  this.onSubmit()
-},
+    this.onSubmit()
+  },
+})
+
+let elem = document.getElementById('product-list-bottom')
+let watcher = scrollMonitor.create(elem)
+watcher.enterViewport(() => {
+  console.log('Entered viewport.')
 })
