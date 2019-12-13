@@ -1,4 +1,5 @@
 const PRICE = 9.99
+const LOAD_NUM = 5
 new Vue({
   el: '#app',
   data: {
@@ -6,8 +7,8 @@ new Vue({
     last_search: '',
     total: 0,
     currency: '$',
-    items: [
-    ],
+    items: [],
+    results: [],
     cart: [],
     loading: false,
     price: PRICE
@@ -19,7 +20,8 @@ new Vue({
       this.$http
         .get('/search/'.concat(this.search))
         .then((response) => {
-            this.items = response.data
+            this.results = response.data
+            this.items = response.data.slice(0, LOAD_NUM)
             this.last_search = this.search
             this.loading = false
           },
