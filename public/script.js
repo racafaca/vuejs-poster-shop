@@ -27,6 +27,9 @@ new Vue({
       }
     },
     onSubmit: function () {
+      if (!this.search.trim().length) {
+        return
+      }
       this.items = []
       this.loading = true
       this.$http
