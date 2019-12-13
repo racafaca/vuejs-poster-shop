@@ -43,7 +43,9 @@
             <div v-else class="empty-items">
                 No items match this search.
             </div>
-            <div id="product-list-bottom"></div>
+            <div id="product-list-bottom">
+                <p v-if="(items.length === results.length) && results.length">No more items.</p>
+            </div>
         </div>
         <div class="cart">
             <h2>Shopping Cart</h2>
